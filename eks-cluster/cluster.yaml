@@ -1,0 +1,21 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: trial-sfn-call
+  region: ap-northeast-1
+  tags:
+    Purpose: SfnEKSCall
+
+managedNodeGroups:
+  - name: default
+    desiredCapacity: 1
+    minSize: 1
+    maxSize: 1
+    tags:
+      Purpose: SfnEKSCall
+    spot: true
+    instanceTypes:
+      - c5.large
+      - c5a.large
+      - c4.large
